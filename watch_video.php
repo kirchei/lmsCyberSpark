@@ -208,7 +208,7 @@ if(isset($_POST['update_now'])){
          <img src="uploaded_files/<?= $fetch_tutor['image']; ?>" alt="">
          <div>
             <h3><?= $fetch_tutor['name']; ?></h3>
-            <span><?= $fetch_tutor['profession']; ?></span>
+            <span><?= ucfirst($fetch_tutor['profession']); ?></span>
          </div>
       </div>
       <form action="" method="post" class="flex">
