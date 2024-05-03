@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
       setcookie('tutor_id', $row['id'], time() + 60 * 60 * 24 * 30, '/');
       header('location:dashboard.php');
    } else {
-      $message[] = 'incorrect email or password!';
+      $message[] = 'Incorrect email or password!';
    }
 }
 

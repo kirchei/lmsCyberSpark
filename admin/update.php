@@ -162,16 +162,7 @@ if (isset($_POST['submit'])) {
 
    </section>
 
-   <!-- registe section ends -->
-
-
-
-
-
-
-
-
-
+   <!-- register section ends -->
 
    <?php include '../components/footer.php'; ?>
 
