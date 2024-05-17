@@ -48,8 +48,11 @@ if(isset($_POST['submit'])){
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/styles.css">
 
+   <!-- email API -->
+   <script src="https://smtpjs.com/v3/smtp.js" defer></script>
+   
    <!-- custom js file link  -->
-<script src="js/script.js" defer></script>
+   <script src="js/script.js" defer></script>
 
 </head>
 <body>
@@ -66,13 +69,15 @@ if(isset($_POST['submit'])){
          <img src="images/contact-img.svg" alt="">
       </div>
 
-      <form action="" method="post">
+      <form action="" method="post" onsubmit="sendEmail(event)">
          <h3>Get in Touch</h3>
-         <input type="text" placeholder="John Smith" required maxlength="100" name="name" class="box">
-         <input type="email" placeholder="student@hotmail.com" required maxlength="100" name="email" class="box">
-         <input type="number" min="0" max="9999999999" placeholder="1234567890" required maxlength="10" name="number" class="box">
-         <textarea name="msg" class="box" placeholder="Enter message" required cols="30" rows="10" maxlength="1000"></textarea>
-         <input type="submit" value="send message" class="inline-btn" name="submit">
+         <label for="emailform" class="form-label">Email address</label>
+         <input type="email" id="emailform" placeholder="Enter your Email Address" name="email" required maxlength="50" class="box">
+         <label for="subjectform" class="form-label">Subject</label>
+         <input type="text" id="subjectform" placeholder="Enter subject" name="subject" required maxlength="50" class="box">
+         <label for="messageform" class="form-label">Message</label>
+         <textarea id="messageform" name="message" class="box" placeholder="Enter your message" required maxlength="1000" cols="30" rows="10"></textarea>
+         <input type="submit" value="send message" class="inline-btn" id="submitBtn">
       </form>
 
    </div>
@@ -89,8 +94,8 @@ if(isset($_POST['submit'])){
       <div class="box">
          <i class="fas fa-envelope"></i>
          <h3>Email Address</h3>
-         <a href="mailto:dlsudcyberspark@gmail.com">dlsudcyberspark@gmail.come</a>
-         <a href="mailto:cybersparkdev@gmail.com">cybersparkdev@gmail.come</a>
+         <a href="mailto:dlsudcyberspark@gmail.com">dlsudcyberspark@gmail.com</a>
+         <a href="mailto:cybersparkdev@gmail.com">cybersparkdev@gmail.com</a>
       </div>
 
       <div class="box">
@@ -108,5 +113,28 @@ if(isset($_POST['submit'])){
 
 <?php include 'components/footer.php'; ?>  
    
+<script>
+
+   function sendEmail(e) {
+       e.preventDefault();
+
+       Email.send({
+           Host : "smtp.elasticemail.com",
+           Username : "justinecarlalbay@gmail.com",
+           Password : "C108B477214C8056761B4ADC524E0F1BECB9",
+           To : 'justinecarlalbay@gmail.com',
+           From : document.getElementById('emailform').value,
+           Subject : document.getElementById('subjectform').value,
+           Body : document.getElementById('messageform').value
+       }).then(
+         message => alert(message)
+       );
+
+       return true;
+   }
+
+
+</script>
+
 </body>
 </html>

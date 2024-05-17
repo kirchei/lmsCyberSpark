@@ -35,7 +35,7 @@ if(isset($_POST['submit'])){
       $message[] = 'email already taken!';
    }else{
       if($pass != $cpass){
-         $message[] = 'confirm passowrd not matched!';
+         $message[] = 'Confirm password does not match!';
       }else{
          $insert_user = $conn->prepare("INSERT INTO `users`(id, name, email, password, image) VALUES(?,?,?,?,?)");
          $insert_user->execute([$id, $name, $email, $cpass, $rename]);

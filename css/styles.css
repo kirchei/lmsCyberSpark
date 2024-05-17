@@ -1216,6 +1216,15 @@ section{
    flex-wrap: wrap;
 }
 
+.contact label {
+   display: flex;
+   align-items: left;
+   flex-wrap: wrap;
+   gap: 1.5rem;
+   font-weight: 1000;
+   font-size: 12px;
+}
+
 .contact .box-container .box{
    flex: 1 1 30rem;
    border-radius: .5rem;

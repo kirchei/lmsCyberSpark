@@ -1,0 +1,8 @@
+How to run CyberSpark
+1. Download and Install XAMPP.
+2. Download project files and paste it under htdocs in the xampp folder.
+3. Open Apache and MySql in XAMPP.
+4. In your browser, go to localhost/phpmyadmin.
+5. Create a new db, name it course_db.
+6. Import the db in the project files with the same name to the new db.
+7. In your browser, go to localhost/lmsCyberspark to run the program.
